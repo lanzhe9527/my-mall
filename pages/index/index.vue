@@ -1,10 +1,17 @@
 <template>
-	<view class="content">
+	<!-- <view class="content">
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+	</view> -->
+	
+	<view class="content">
+<i class="iconfont icon-saoyisao"></i>
 	</view>
+	
+	
+	
 </template>
 
 <script>
