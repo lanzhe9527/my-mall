@@ -3,7 +3,36 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#fff",
+						"searchInput": {
+							"align": "left",
+							"backgroundColor": "#f8f8f8",
+							"borderRadius": "4px",
+							"disabled": true,
+							"placeholder": "全新LC250越野车",
+							"placeholderColor": "#ccc"
+						},
+						"buttons": [
+							{
+								"color": "#989898",
+								"colorPressed": "#fd6801",
+								"float": "left",
+								"fontSize": "26px",
+								"fontSrc": "/static/font/iconfont.ttf",
+								"text": "\ue616"
+							},
+							{
+								"color": "#989898",
+								"float": "right",
+								"fontSize": "26px",
+								"fontSrc": "/static/font/iconfont.ttf",
+								"text": "\ue891"
+							}
+						]
+					}
+				}
 			}
 		}, {
 			"path": "pages/class/class",
