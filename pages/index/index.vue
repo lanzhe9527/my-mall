@@ -1,13 +1,19 @@
 <template>
-	<!-- <view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-	</view> -->
-	
-	<view class="content">
-<i class="iconfont icon-saoyisao"></i>
+	<view>
+		<!-- 轮播图 -->
+		<swiper indicator-dots autoplay :interval="3000" :duration="1000">
+			<swiper-item>
+				<view class="swiper-item" style="background-color: aqua;">
+					<image src="../../static/images/lc250.png" style="height: 350rpx;"></image>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item" style="background-color: bisque;">2</view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item" style="background-color: bisque;">3</view>
+			</swiper-item>
+		</swiper>
 	</view>
 	
 	
@@ -31,29 +37,5 @@
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>
