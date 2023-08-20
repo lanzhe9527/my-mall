@@ -7,16 +7,21 @@
 		<!-- 全局分割线 -->
 		<divider></divider>
 		
+		<three-adv :advdata="threeeAdv"></three-adv>
+		
+		
 	</view>
 </template>
 
 <script>
 	import swiperImages from "@/components/index/swiper-images.vue"
 	import navIcon from "@/components/index/index-nav.vue"
+	import threeAdv from "@/components/index/three-adv.vue"
 	export default {
 		components:{
 			swiperImages,
-			navIcon
+			navIcon,
+			threeAdv
 		},
 		data() {
 			return {
@@ -73,7 +78,18 @@
 						src:"../../static/indexNav/10.gif",
 						text:'米粉卡'
 					},
-				]
+				],
+				threeeAdv:{
+					big:{
+						src:"../../static/images/demo/demo1.jpg"
+					},
+					smallTop:{
+						src:"../../static/images/demo/demo2.jpg"
+					},
+					smallBottom:{
+						src:"../../static/images/demo/demo3.jpg"
+					}
+				}
 				
 			}
 		},
