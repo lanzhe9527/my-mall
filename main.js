@@ -1,6 +1,12 @@
 import App from './App'
 import "animate.css"
 
+
+// 引入全局组件start
+import divider from "@/components/common/divider.vue"
+Vue.component("divider",divider)
+ // 引入全局组件end
+
 // #ifndef VUE3
 import Vue from 'vue'
 import './uni.promisify.adaptor'

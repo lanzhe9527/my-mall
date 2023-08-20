@@ -4,7 +4,8 @@
 		<swiper-images :resdata="swipers"></swiper-images>
 		<!-- 首页分类 -->
 		<nav-icon :iconNav="iconArray"></nav-icon>
-		
+		<!-- 全局分割线 -->
+		<divider></divider>
 		
 	</view>
 </template>
