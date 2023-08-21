@@ -6,18 +6,14 @@
 		<nav-icon :iconNav="iconArray"></nav-icon>
 		<!-- 全局分割线 -->
 		<divider></divider>
-		
+		<!-- 三图广告 -->
 		<three-adv :advdata="threeeAdv"></three-adv>
 		
 		<!-- 全局分割线 -->
 		<divider></divider>
+		<!-- 每日推荐 -->
+		<card headerTitle="每日推荐" bodyImg="/static/images/demo/demo8.jpg"></card>
 		
-		<view class="card-box">
-			<!-- 标题 -->
-			<view class="" style="font-size: 30rpx;font-weight:500;
-							border-bottom: 1rpx solid #f1f1f1;;padding: 10rpx 20rpx">每日推荐</view>
-		<image src="../../static/images/demo/demo8.jpg" mode="widthFix"></image>
-		</view>
 		
 		
 	</view>
@@ -27,11 +23,13 @@
 	import swiperImages from "@/components/index/swiper-images.vue"
 	import navIcon from "@/components/index/index-nav.vue"
 	import threeAdv from "@/components/index/three-adv.vue"
+	import card from "@/components/common/card.vue"
 	export default {
 		components:{
 			swiperImages,
 			navIcon,
-			threeAdv
+			threeAdv,
+			card
 		},
 		data() {
 			return {
