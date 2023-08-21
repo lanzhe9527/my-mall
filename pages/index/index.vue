@@ -9,6 +9,16 @@
 		
 		<three-adv :advdata="threeeAdv"></three-adv>
 		
+		<!-- 全局分割线 -->
+		<divider></divider>
+		
+		<view class="card-box">
+			<!-- 标题 -->
+			<view class="" style="font-size: 30rpx;font-weight:500;
+							border-bottom: 1rpx solid #f1f1f1;;padding: 10rpx 20rpx">每日推荐</view>
+		<image src="../../static/images/demo/demo8.jpg" mode="widthFix"></image>
+		</view>
+		
 		
 	</view>
 </template>
