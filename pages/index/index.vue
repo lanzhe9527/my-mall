@@ -15,21 +15,25 @@
 		<card headerTitle="每日推荐" bodyImg="/static/images/demo/demo8.jpg"></card>
 		
 		<!-- 列表 -->
-		<view class="">
+		<common-list :commonList="commonList"></common-list>
+		
+		<!-- <view class="" style="display: flex;flex-wrap: wrap;justify-content: space-between;">
+		<block v-for="(item,index) in commonList" :key="index">
 			<view class="" style="width: 372rpx;display: flex; flex-direction: column;">
-			<image src="../../static/images/list/1.jpg" mode="widthFix"></image>
+			<image :src="item.cover" mode="widthFix"></image>
 			<view class="" style="padding: 10rpx 30rpx;display: flex;flex-direction: column;">
-				<text style="font-size: 30rpx;">米家空调</text>
-				<text style="color: darkgray;">1.5匹变流空调</text>
+				<text style="font-size: 30rpx;">{{item.title}}</text>
+				<text style="color: darkgray;">{{item.desc}}</text>
 				<view class="" style="display: flex;">
-					<price>2996</price>
+					<price>{{item.nPrice}}</price>
 					<text style="margin-left: 30rpx;font-size: 25rpx;
 								text-decoration: line-through;
-								align-self: flex-end;color: darkgray;">¥3300</text>
+								align-self: flex-end;color: darkgray;">¥{{item.oPrice}}</text>
 				</view>
 				</view>
 			</view>
-		</view>
+		</block>
+		</view> -->
 		
 		
 	</view>
@@ -41,13 +45,15 @@
 	import threeAdv from "@/components/index/three-adv.vue"
 	import card from "@/components/common/card.vue"
 	import price from "@/components/common/price.vue"
+	import commonList from "@/components/common/commList.vue"
 	export default {
 		components:{
 			swiperImages,
 			navIcon,
 			threeAdv,
 			card,
-			price
+			price,
+			commonList
 		},
 		data() {
 			return {
@@ -115,8 +121,51 @@
 					smallBottom:{
 						src:"../../static/images/demo/demo3.jpg"
 					}
-				}
-				
+				},
+				commonList:[
+					{
+						cover:"../../static/images/list/1.jpg",
+						title:"米家空调",
+						desc:"1.5匹变流空调",
+						oPrice:"2678",
+						nPrice:"1999"
+					},
+					{
+						cover:"../../static/images/list/2.jpg",
+						title:"黑鲨手机",
+						desc:"游戏性能，散热好",
+						oPrice:"2678",
+						nPrice:"1299"
+					},
+					{
+						cover:"../../static/images/list/3.jpg",
+						title:"红米手机",
+						desc:"1.5匹变流空调",
+						oPrice:"2678",
+						nPrice:"1999"
+					},
+					{
+						cover:"../../static/images/list/4.jpg",
+						title:"荣耀",
+						desc:"1.5匹变流空调",
+						oPrice:"2678",
+						nPrice:"1999"
+					},
+					{
+						cover:"../../static/images/list/5.jpg",
+						title:"红米redmi",
+						desc:"1.5匹变流空调",
+						oPrice:"2678",
+						nPrice:"1999"
+					},
+					{
+						cover:"../../static/images/list/6.jpg",
+						title:"米家平板",
+						desc:"本地数据",
+						oPrice:"2678",
+						nPrice:"1999"
+					}
+				]
 			}
 		},
 		onLoad() {
