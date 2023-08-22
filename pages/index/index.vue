@@ -22,10 +22,7 @@
 				<text style="font-size: 30rpx;">米家空调</text>
 				<text style="color: darkgray;">1.5匹变流空调</text>
 				<view class="" style="display: flex;">
-					<view class="main-text-color" style="display: flex;">
-						<text style="align-self: flex-start;font-size: 22rpx;
-									align-self: flex-start;margin-right: 5rpx;">¥</text>2999
-					</view>
+					<price price="2998"></price>
 					<text style="margin-left: 30rpx;font-size: 25rpx;
 								text-decoration: line-through;
 								align-self: flex-end;color: darkgray;">¥3300</text>
@@ -43,12 +40,14 @@
 	import navIcon from "@/components/index/index-nav.vue"
 	import threeAdv from "@/components/index/three-adv.vue"
 	import card from "@/components/common/card.vue"
+	import price from "@/components/common/price.vue"
 	export default {
 		components:{
 			swiperImages,
 			navIcon,
 			threeAdv,
-			card
+			card,
+			price
 		},
 		data() {
 			return {
