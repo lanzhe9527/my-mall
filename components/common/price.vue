@@ -1,14 +1,14 @@
 <template>
 	<view class="main-text-color prcie-box">
-		<text class="price-icon">¥</text>{{price}}
+		<text class="price-icon">¥</text><slot/>
 	</view>
 </template>
 
 <script>
 	export default {
-		props: {
-			price: [String, Number]
-		}
+		// props: {
+		// 	price: [String, Number]
+		// }
 	}
 </script>
 
