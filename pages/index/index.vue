@@ -1,5 +1,14 @@
 <template>
 	<view>
+		<!-- 顶部选项卡 -->
+		<scroll-view scroll-x="true" style="white-space: nowrap;height: 80rpx;">
+			<view v-for="(item,index) in tabBars" :key="index" style="display: inline-block;
+									padding:0 30rpx;height: 80rpx;line-height: 80rpx;">
+				<text style="font-size: 30rpx;">{{item.name}}</text>
+			</view>
+			
+		</scroll-view>
+		
 		<!-- 轮播图 -->
 		<swiper-images :resdata="swipers"></swiper-images>
 		<!-- 首页分类 -->
@@ -38,6 +47,35 @@
 		},
 		data() {
 			return {
+				tabBars:[
+					{
+						name:"关注"
+					},
+					{
+						name:"推荐"
+					},
+					{
+						name:"体育"
+					},
+					{
+						name:"热点"
+					},
+					{
+						name:"财经"
+					},
+					{
+						name:"军事"
+					},
+					{
+						name:"越野"
+					},
+					{
+						name:"超跑"
+					},
+					{
+						name:"财经"
+					},
+				],
 				swipers:[
 					{
 						src:"../../static/images/lc250.png",
