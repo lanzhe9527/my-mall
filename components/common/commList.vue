@@ -19,7 +19,11 @@
 </template>
 
 <script>
+	import price from "@/components/common/price.vue"
 	export default{
+		components:{
+			price
+		},
 		props:{
 			commonList:Array
 		}
