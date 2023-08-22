@@ -14,6 +14,25 @@
 		<!-- 每日推荐 -->
 		<card headerTitle="每日推荐" bodyImg="/static/images/demo/demo8.jpg"></card>
 		
+		<!-- 列表 -->
+		<view class="">
+			<view class="" style="width: 372rpx;display: flex; flex-direction: column;">
+			<image src="../../static/images/list/1.jpg" mode="widthFix"></image>
+			<view class="" style="padding: 10rpx 30rpx;display: flex;flex-direction: column;">
+				<text style="font-size: 30rpx;">米家空调</text>
+				<text style="color: darkgray;">1.5匹变流空调</text>
+				<view class="" style="display: flex;">
+					<view class="main-text-color" style="display: flex;">
+						<text style="align-self: flex-start;font-size: 22rpx;
+									align-self: flex-start;margin-right: 5rpx;">¥</text>2999
+					</view>
+					<text style="margin-left: 30rpx;font-size: 25rpx;
+								text-decoration: line-through;
+								align-self: flex-end;color: darkgray;">¥3300</text>
+				</view>
+				</view>
+			</view>
+		</view>
 		
 		
 	</view>
