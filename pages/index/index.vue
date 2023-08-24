@@ -4,11 +4,12 @@
 		<scroll-view scroll-x="true" style="white-space: nowrap;height: 80rpx;">
 			<view v-for="(item,index) in tabBars" :key="index" style="display: inline-block;
 									padding:0 30rpx;height: 80rpx;line-height: 80rpx; box-sizing: border-box;"
-									:class="tabIndex==index? 'bottom-border main-text-color':''">
+									:class="tabIndex==index? 'bottom-border main-text-color':''" 
+									@click="changeTab(index)">
 				<text style="font-size: 30rpx;">{{item.name}}</text>
 			</view>
 		</scroll-view>
-		<swiper :current="tabIndex" :style="'height:'+scrollH+'px;'">
+		<swiper :current="tabIndex" :style="'height:'+scrollH+'px;'" @change="onChageTab">
 			<swiper-item v-for="(item,index) in tabBars" :key="index">
 				<scroll-view scroll-y="true" scroll-x="false" :style="'height:'+scrollH+'px;'">
 					<view v-for="i in 100" :key="index">{{i}}</view>
@@ -206,7 +207,20 @@
 		})
 		},
 		methods: {
-
+			// 切换选项卡
+				changeTab(index){
+					if(this.tabIndex===index){
+						return;
+					}else{
+						this.tabIndex=index
+					}
+					
+				},
+				// 监听滑动列表
+				onChageTab(e){
+					console.log(e.detail.current)
+					this.changeTab(e.detail.current)
+				}
 		}
 	}
 </script>
