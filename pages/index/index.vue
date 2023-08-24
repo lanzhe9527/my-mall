@@ -2,7 +2,8 @@
 	<view>
 		<!-- 顶部选项卡 -->
 		<scroll-view scroll-x="true" style="white-space: nowrap;height: 80rpx;"
-								:scroll-into-view="scrollInto">
+								:scroll-into-view="scrollInto"
+								:scroll-with-animation="true">
 			<view v-for="(item,index) in tabBars" :key="index" style="display: inline-block;
 									padding:0 30rpx;height: 80rpx;line-height: 80rpx; box-sizing: border-box;"
 									:class="tabIndex==index? 'bottom-border main-text-color':''" 
