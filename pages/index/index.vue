@@ -3,11 +3,19 @@
 		<!-- 顶部选项卡 -->
 		<scroll-view scroll-x="true" style="white-space: nowrap;height: 80rpx;">
 			<view v-for="(item,index) in tabBars" :key="index" style="display: inline-block;
-									padding:0 30rpx;height: 80rpx;line-height: 80rpx;">
+									padding:0 30rpx;height: 80rpx;line-height: 80rpx; box-sizing: border-box;"
+									:class="tabIndex==index? 'bottom-border main-text-color':''">
 				<text style="font-size: 30rpx;">{{item.name}}</text>
 			</view>
-			
 		</scroll-view>
+		<swiper :current="tabIndex" :style="'height:'+scrollH+'px;'">
+			<swiper-item v-for="(item,index) in tabBars" :key="index">
+				<scroll-view scroll-y="true" scroll-x="false" :style="'height:'+scrollH+'px;'">
+					<view v-for="i in 100" :key="index">{{i}}</view>
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+		
 		
 		<!-- 轮播图 -->
 		<swiper-images :resdata="swipers"></swiper-images>
@@ -47,6 +55,8 @@
 		},
 		data() {
 			return {
+				tabIndex:0,
+				scrollH:500,
 				tabBars:[
 					{
 						name:"关注"
@@ -188,7 +198,12 @@
 			}
 		},
 		onLoad() {
-
+		uni.getSystemInfo({
+			success: (res) => {
+				this.scrollH=res.windowHeight-uni.upx2px(80)
+				console.log(res.windowHeight-uni.upx2px(80))
+			}
+		})
 		},
 		methods: {
 

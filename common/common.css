@@ -33,3 +33,7 @@ image {
 .main-border-color {
 	border-color: #f1f1f1;
 }
+
+.bottom-border{
+	border-bottom:5rpx solid #fd6801;
+}
