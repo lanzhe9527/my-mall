@@ -1,0 +1,15 @@
+<template>
+	<div>
+		<text>测试nvue页面</text>
+	</div>
+</template>
+
+<script>
+	export default {
+		
+	}
+</script>
+
+<style>
+
+</style>
