@@ -14,7 +14,8 @@
 		</scroll-view>
 		<swiper :current="tabIndex" :style="'height:'+scrollH+'px;'" @change="onChageTab">
 			<swiper-item v-for="(item,index) in newsItems" :key="index">
-				<scroll-view scroll-y="true" scroll-x="false" :style="'height:'+scrollH+'px;'">
+				<scroll-view scroll-y="true" scroll-x="false" :style="'height:'+scrollH+'px;'"
+							@scrolltolower="loadMore(index)">
 					
 					<block v-for="(item1,index1) in item.list" :key="index1">
 						
@@ -45,6 +46,11 @@
 					
 					
 					</block>
+					
+					<view style="text-align: center;color: darkgray;padding-bottom: 100rpx;">
+					{{item.loadText}}
+					</view>
+					
 				</scroll-view>
 			</swiper-item>
 		</swiper>
@@ -328,7 +334,8 @@
 				let arr=[];
 				for (let i = 0; i < this.tabBars.length; i++) {
 					let obj={
-						list:[]
+						list:[],
+						loadText:'上拉加载更多'
 					}
 					if (i===0) {
 						obj.list=demo1
@@ -359,7 +366,19 @@
 				addData(){
 					let index=this.tabIndex
 					this.newsItems[index].list=demo2
-				}
+				},
+				loadMore(index){
+					let items=this.newsItems[index];
+					
+					if (items.loadText!=='上拉加载更多') {
+						return;
+					} 
+						items.loadText='加载中...';
+						setTimeout(()=>{
+							items.list=[...items.list,...demo2]
+							items.loadText='上拉加载更多'
+						}, 2000);
+				},
 				
 				
 		}
