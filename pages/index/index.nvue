@@ -1,24 +1,20 @@
 <template>
 	<div>
+		<!-- 轮播图组件 -->
 		<rocky-slider :swipers="swipers"></rocky-slider>
-		<!-- 图标分类 -->
-		<div style="display: flex;flex-direction:row;flex-wrap: wrap; padding: 10px;">
-			<div v-for="(item,index) in iconArray" :key="index" style="width: 146px;display: flex;
-						flex-direction: column;justify-content: center; align-items: center;
-						padding-top:10px;padding-bottom: 10px;">
-				<image :src="item.src" style="width: 58px;height: 58px;"></image>
-				<text style="font-size: 25px; margin-top: 15px;">{{item.text}}</text>
-			</div>
-		</div>
+		<!-- 图标分类组件 -->
+		<rocky-nav :iconArray="iconArray"></rocky-nav>
 
 	</div>
 </template>
 
 <script>
-	import rockySlider from "@/components/common/nvue/rocky-slider.nvue"
+	import rockySlider from "@/components/index/nvue/rocky-slider.nvue"
+	import rockyNav from "@/components/index/nvue/rocky-nav.nvue"
 	export default {
 		components: {
 			rockySlider,
+			rockyNav,
 		},
 		data() {
 			return {

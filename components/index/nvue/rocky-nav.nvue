@@ -1,0 +1,43 @@
+<template>
+	<div>
+		<div class="nav-box">
+			<div class="nav-content" v-for="(item,index) in iconArray" :key="index">
+				<image class="nav-img" :src="item.src"></image>
+				<text class="nav-text">{{item.text}}</text>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		props: {
+			iconArray: Array
+		}
+	}
+</script>
+
+<style scoped>
+	.nav-box {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 10px;
+	}
+
+	.nav-content {
+		width: 146px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.nav-img{
+		width: 58px;height: 58px;
+	}
+	.nav-text{
+		font-size: 25px; margin-top: 15px;
+	}
+</style>
