@@ -1,15 +1,48 @@
 <template>
 	<div>
-		<text>测试nvue页面</text>
+		<slider class="slider" :auto-play="true">
+			<div>
+				<image class="image" src="../../static/images/wrangler.png" mode=""></image>
+			</div>
+			<indicator class="indicator"></indicator>
+			<div>
+				<image class="image" src="../../static/images/lc250.png" mode=""></image>
+			</div>
+			<indicator class="indicator"></indicator>
+			<div>
+				<image class="image" src="../../static/images/goole.png" mode=""></image>
+			</div>
+			<indicator class="indicator"></indicator>
+		</slider>
 	</div>
 </template>
 
 <script>
 	export default {
-		
+
 	}
 </script>
 
 <style>
+	.slider {
+		width: 750px;
+		height: 300px;
+	}
 
+	.image {
+		width: 750px;
+		height: 300px;
+	}
+
+	.indicator {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 150px;
+		height: 80px;
+		item-size:20;
+		item-color: gray;
+		item-selected-color: #fff;
+		background-color: rgba(0, 0, 0, 0);
+	}
 </style>
