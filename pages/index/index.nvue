@@ -7,7 +7,8 @@
 		<!-- 分割线 -->
 		<divider/>
 		<threeAdv :advData="advData"></threeAdv>
-		
+		<divider/>
+		<rocky-one></rocky-one>
 
 		
 	</div>
@@ -18,12 +19,14 @@
 	import rockyNav from "@/components/index/nvue/rocky-nav.nvue"
 	import divider from "@/components/common/nvue/divider.nvue"
 	import threeAdv from "@/components/index/nvue/three-adv.nvue"
+	import rockyOne from "@/components/index/nvue/rocky-one.nvue"
 	export default {
 		components: {
 			rockySlider,
 			rockyNav,
 			divider,
 			threeAdv,
+			rockyOne,
 		},
 		data() {
 			return {
