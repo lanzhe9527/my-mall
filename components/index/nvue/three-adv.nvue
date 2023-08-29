@@ -1,0 +1,45 @@
+<template>
+	<div>
+		<div class="adv-box">
+			<image :src="advData.big.src" class="big-img"></image>
+			<div class="right-img-box">
+				<image :src="advData.smallTop.src" class="small-img mragin-b"></image>
+				<image :src="advData.smallBottom.src" class="small-img"></image>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		props: {
+			advData: Object
+		}
+	}
+</script>
+
+<style scoped>
+	.adv-box {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.big-img {
+		width: 373px;
+		height: 530px;
+	}
+
+	.right-img-box {
+		width: 375px;
+		margin-left: 2px;
+	}
+
+	.small-img {
+		width: 375px;
+		height: 263.5px;
+	}
+
+	.mragin-b {
+		margin-bottom: 3px;
+	}
+</style>

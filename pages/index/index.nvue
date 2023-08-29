@@ -6,6 +6,10 @@
 		<rocky-nav :iconArray="iconArray"></rocky-nav>
 		<!-- 分割线 -->
 		<divider/>
+		<threeAdv :advData="advData"></threeAdv>
+		
+
+		
 	</div>
 </template>
 
@@ -13,11 +17,13 @@
 	import rockySlider from "@/components/index/nvue/rocky-slider.nvue"
 	import rockyNav from "@/components/index/nvue/rocky-nav.nvue"
 	import divider from "@/components/common/nvue/divider.nvue"
+	import threeAdv from "@/components/index/nvue/three-adv.nvue"
 	export default {
 		components: {
 			rockySlider,
 			rockyNav,
-			divider
+			divider,
+			threeAdv,
 		},
 		data() {
 			return {
@@ -68,7 +74,19 @@
 						src: "../../static/indexNav/10.gif",
 						text: '米粉卡'
 					},
-				]
+				],
+				
+				advData:{
+					big:{
+						src:"../../static/images/demo/demo1.jpg"
+					},
+					smallTop:{
+						src:"../../static/images/demo/demo3.jpg"
+					},
+					smallBottom:{
+						src:"../../static/images/demo/demo2.jpg"
+					}
+				}
 			}
 		}
 	}
