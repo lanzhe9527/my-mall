@@ -1,15 +1,19 @@
 <template>
 	<div style="background-color: #fff;">
-		<!-- 轮播图组件 -->
-		<rocky-slider :swipers="swipers"></rocky-slider>
-		<!-- 图标分类组件 -->
-		<rocky-nav :iconArray="iconArray"></rocky-nav>
-		<!-- 分割线 -->
-		<divider/>
-		<threeAdv :advData="advData"></threeAdv>
-		<divider/>
-		<rocky-one></rocky-one>
-
+		<list :show-scrollbar="false">
+			<cell>
+				<!-- 轮播图组件 -->
+				<rocky-slider :swipers="swipers"></rocky-slider>
+				<!-- 图标分类组件 -->
+				<rocky-nav :iconArray="iconArray"></rocky-nav>
+				<!-- 分割线 -->
+				<divider/>
+				<threeAdv :advData="advData"></threeAdv>
+				<divider/>
+				<rocky-one></rocky-one>
+				
+			</cell>
+		</list>
 		
 	</div>
 </template>
