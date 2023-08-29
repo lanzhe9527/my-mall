@@ -1,0 +1,87 @@
+<template>
+	<div>
+		<div class="commList-box">
+			<div v-for="(item,index) in data" :key="index">
+				<image :src="item.cover" class="img-box"></image>
+				<div class="text-box">
+					<text class="font-lg">{{item.title}}</text>
+					<text class="font-md desc">{{item.desc}}</text>
+					<div class="prcie-box">
+						<div style="display: flex;flex-direction: row;margin-right: 30px;">
+							<text class="new-icon font-sm">¥</text>
+							<text class="new-price font-lg">{{item.nPrice}}</text>
+						</div>
+						<text class="font-lg old-price">¥{{item.oPrice}}</text>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		props: {
+			data: Array
+		}
+
+	}
+</script>
+
+<style scoped>
+	.commList-box {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.img-box {
+		width: 370px;
+		height: 370px;
+	}
+
+	.text-box {
+		padding-left: 20px;
+		margin-top: 10px;
+	}
+
+	.font-lg {
+		font-size: 28px;
+	}
+
+	.font-md {
+		font-size: 26px;
+	}
+
+	.font-sm {
+		font-size: 24px;
+	}
+
+	.desc {
+		color: darkgray;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.prcie-box {
+		display: flex;
+		flex-direction: row;
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+
+	.old-price {
+		color: darkgray;
+		text-decoration: line-through;
+	}
+
+	.new-icon {
+		color: #fd6801;
+		margin-right: 5px;
+	}
+
+	.new-price {
+		color: #fd6801;
+	}
+</style>
