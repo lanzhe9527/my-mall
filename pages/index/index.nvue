@@ -1,20 +1,23 @@
 <template>
-	<div>
+	<div style="background-color: #fff;">
 		<!-- 轮播图组件 -->
 		<rocky-slider :swipers="swipers"></rocky-slider>
 		<!-- 图标分类组件 -->
 		<rocky-nav :iconArray="iconArray"></rocky-nav>
-
+		<!-- 分割线 -->
+		<divider/>
 	</div>
 </template>
 
 <script>
 	import rockySlider from "@/components/index/nvue/rocky-slider.nvue"
 	import rockyNav from "@/components/index/nvue/rocky-nav.nvue"
+	import divider from "@/components/common/nvue/divider.nvue"
 	export default {
 		components: {
 			rockySlider,
 			rockyNav,
+			divider
 		},
 		data() {
 			return {
@@ -70,7 +73,6 @@
 		}
 	}
 </script>
-
 <style>
 
 </style>
