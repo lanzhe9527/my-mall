@@ -12,7 +12,11 @@
 			</scroller>	
 		</div>
 		
-		
+		<slider  style="flex: 1;" infinite="false" :index="tabIndex" @change="sliderChange">
+			<div v-for="(item,index) in tabBar" :key="index" :ref="`tab${index}`">
+			<text>{{item.name}}</text>
+			</div>
+		</slider>
 		
 		
 		<!-- <list :show-scrollbar="false"> -->
@@ -46,6 +50,7 @@
 	import rockyOne from "@/components/index/nvue/rocky-one.nvue"
 	import rockyComlist from "@/components/common/nvue/rocky-comlist.nvue"
 	
+	const dom=weex.requireModule('dom')
 	export default {
 		components: {
 			rockySlider,
@@ -193,10 +198,32 @@
 					}]
 			}
 		},
+		
+		watch:{
+			tabIndex(a, b){
+				this.changeTab(a)
+			}
+		},
 		methods:{
-			changeTab(index){
-				console.log(index)
+			// 切换选项卡
+			async changeTab(index){
 				this.tabIndex=index
+				// 拿到当前元素
+				let el=this.$refs[`tab${index}`][0]
+				// 获取当前元素节点信息
+				dom.getComponentRect(el,(res)=>{
+					console.log(res)
+					if (res.size.right>750) {
+						let nEl=this.$refs[`tab${index-1}`][0]
+						return dom.scrollToElement(nEl,{})
+					}
+					if (res.size.left<0) {
+						dom.scrollToElement(el,{})
+					}
+				});
+			},
+			sliderChange(e){
+			this.tabIndex=e.index
 			}
 		}
 	}
