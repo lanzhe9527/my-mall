@@ -1,24 +1,39 @@
 <template>
 	<div style="background-color: #fff;">
-		<list :show-scrollbar="false">
-			<cell>
+		<div style="width: 750px;height: 75px;">
+			<scroller scroll-direction="horizontal" :show-scrollbar="false"
+			 style="width: 750px; height: 75px;flex-direction: row;">
+				<div v-for="(item,index) in tabBar" :key="index" style="width: 120px;height:75px;"
+					@click="changeTab(index)">
+					<text style="font-size: 26px;width: 120px;height:75px;line-height: 75px;
+					text-align: center;border-bottom-width:3px;border-bottom-style:solid;" 
+					:style="{'color':tabIndex===index? '#fd6801':'#555','border-bottom-color':tabIndex===index?'#fd6801':'#fff'}">{{item.name}}</text>
+				</div>
+			</scroller>	
+		</div>
+		
+		
+		
+		
+		<!-- <list :show-scrollbar="false"> -->
+			<!-- <cell> -->
 				<!-- 轮播图组件 -->
-				<rocky-slider :swipers="swipers"></rocky-slider>
+				<!-- <rocky-slider :swipers="swipers"></rocky-slider> -->
 				<!-- 图标分类组件 -->
-				<rocky-nav :iconArray="iconArray"></rocky-nav>
+				<!-- <rocky-nav :iconArray="iconArray"></rocky-nav> -->
 				<!-- 分割线 -->
-				<divider/>
-				<threeAdv :advData="advData"></threeAdv>
-				<divider/>
-				<rocky-one></rocky-one>
+				<!-- <divider/> -->
+				<!-- <threeAdv :advData="advData"></threeAdv> -->
+				<!-- <divider/> -->
+				<!-- <rocky-one></rocky-one> -->
 				
 				<!-- 公共列表组件 -->
-				<rocky-comlist :data="commonList"></rocky-comlist>
+				<!-- <rocky-comlist :data="commonList"></rocky-comlist> -->
 				
 				
 				
-			</cell>
-		</list>
+			<!-- </cell> -->
+		<!-- </list> -->
 		
 	</div>
 </template>
@@ -42,6 +57,8 @@
 		},
 		data() {
 			return {
+				tabIndex:0,
+				
 				swipers: [{
 					src: "../../static/images/wrangler.png"
 				}, {
@@ -146,6 +163,40 @@
 						nPrice:"1999"
 					}
 				],
+				
+				tabBar:[{
+						name:"关注"
+					},
+					{
+						name:"推荐"
+					},
+					{
+						name:"体育"
+					},
+					{
+						name:"热点"
+					},
+					{
+						name:"财经"
+					},
+					{
+						name:"军事"
+					},
+					{
+						name:"越野"
+					},
+					{
+						name:"超跑"
+					},
+					{
+						name:"财经"
+					}]
+			}
+		},
+		methods:{
+			changeTab(index){
+				console.log(index)
+				this.tabIndex=index
 			}
 		}
 	}
