@@ -1,6 +1,6 @@
 <template>
 	<div style="background-color: #fff;">
-		<div style="width: 750px;height: 75px;">
+	<!-- 	<div style="width: 750px;height: 75px;">
 			<scroller scroll-direction="horizontal" :show-scrollbar="false"
 			 style="width: 750px; height: 75px;flex-direction: row;">
 				<div v-for="(item,index) in tabBar" :key="index" style="width: 120px;height:75px;"
@@ -10,7 +10,8 @@
 					:style="{'color':tabIndex===index? '#fd6801':'#555','border-bottom-color':tabIndex===index?'#fd6801':'#fff'}">{{item.name}}</text>
 				</div>
 			</scroller>	
-		</div>
+		</div> -->
+		<rocky-tab :tabBar="tabBar" :tabIndex="tabIndex" @fChange="sChange"></rocky-tab>
 		
 		<slider  style="flex: 1;" infinite="false" :index="tabIndex" @change="sliderChange">
 			<div v-for="(item,index) in tabBar" :key="index">
@@ -49,6 +50,7 @@
 	import threeAdv from "@/components/index/nvue/three-adv.nvue"
 	import rockyOne from "@/components/index/nvue/rocky-one.nvue"
 	import rockyComlist from "@/components/common/nvue/rocky-comlist.nvue"
+	import rockyTab from "@/components/index/nvue/rocky-tab.nvue"
 	
 	const dom=weex.requireModule('dom')
 	export default {
@@ -59,6 +61,7 @@
 			threeAdv,
 			rockyOne,
 			rockyComlist,
+			rockyTab,
 		},
 		data() {
 			return {
@@ -199,30 +202,33 @@
 			}
 		},
 		
-		watch:{
-			tabIndex(a, b){
-				this.changeTab(a)
-			}
-		},
+		// watch:{
+		// 	tabIndex(a, b){
+		// 		this.changeTab(a)
+		// 	}
+		// },
 		methods:{
-			// 切换选项卡
-			async changeTab(index){
+			sChange(index){
 				this.tabIndex=index
-				// 拿到当前元素
-				let el=this.$refs[`tab${index}`][0]
-				console.log(el)
-				// 获取当前元素节点信息
-				dom.getComponentRect(el,(res)=>{
-					console.log(res)
-					if (res.size.right>750) {
-						let nEl=this.$refs[`tab${index-4}`][0]
-						return dom.scrollToElement(nEl,{})
-					}
-					if (res.size.left<0) {
-						dom.scrollToElement(el,{})
-					}
-				});
 			},
+			// // 切换选项卡
+			// async changeTab(index){
+			// 	this.tabIndex=index
+			// 	// 拿到当前元素
+			// 	let el=this.$refs[`tab${index}`][0]
+			// 	console.log(el)
+			// 	// 获取当前元素节点信息
+			// 	dom.getComponentRect(el,(res)=>{
+			// 		console.log(res)
+			// 		if (res.size.right>750) {
+			// 			let nEl=this.$refs[`tab${index-4}`][0]
+			// 			return dom.scrollToElement(nEl,{})
+			// 		}
+			// 		if (res.size.left<0) {
+			// 			dom.scrollToElement(el,{})
+			// 		}
+			// 	});
+			// },
 			sliderChange(e){
 			this.tabIndex=e.index
 			}

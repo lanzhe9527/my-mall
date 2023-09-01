@@ -1,0 +1,64 @@
+<template>
+	<div>
+		<div style="width: 750px;height: 75px;">
+			<scroller scroll-direction="horizontal" :show-scrollbar="false"
+			 style="width: 750px; height: 75px;flex-direction: row;">
+				<div v-for="(item,index) in tabBar" :key="index" style="width: 120px;height:75px;"
+					@click="changeTab(index)" :ref="`tab${index}`">
+					<text style="font-size: 26px;width: 120px;height:75px;line-height: 75px;
+					text-align: center;border-bottom-width:3px;border-bottom-style:solid;" 
+					:style="{'color':tabIndex===index? '#fd6801':'#555','border-bottom-color':tabIndex===index?'#fd6801':'#fff'}">{{item.name}}</text>
+				</div>
+			</scroller>	
+		</div>
+	</div>
+</template>
+
+<script>
+		const dom=weex.requireModule('dom')
+	export default {
+		props:{
+			tabBar:{
+				type:Array,
+				default:[]
+			},
+			tabIndex:{
+				type:Number,
+				default:0
+			}
+		},
+		watch:{
+			tabIndex(a, b){
+				this.changeTab(a)
+			}
+		},
+		methods:{
+			// 切换选项卡
+			async changeTab(index){
+				// this.tabIndex=index
+				this.$emit('fChange',index)
+				// 拿到当前元素
+				let el=this.$refs[`tab${index}`][0]
+				console.log(el)
+				// 获取当前元素节点信息
+				dom.getComponentRect(el,(res)=>{
+					console.log(res)
+					if (res.size.right>750) {
+						let nEl=this.$refs[`tab${index-4}`][0]
+						return dom.scrollToElement(nEl,{})
+					}
+					if (res.size.left<0) {
+						dom.scrollToElement(el,{})
+					}
+				});
+			},
+			sliderChange(e){
+			this.tabIndex=e.index
+			}
+		}
+	}
+</script>
+
+<style>
+
+</style>
