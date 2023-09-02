@@ -1,44 +1,35 @@
 <template>
 	<div style="background-color: #fff;">
-	<!-- 	<div style="width: 750px;height: 75px;">
-			<scroller scroll-direction="horizontal" :show-scrollbar="false"
-			 style="width: 750px; height: 75px;flex-direction: row;">
-				<div v-for="(item,index) in tabBar" :key="index" style="width: 120px;height:75px;"
-					@click="changeTab(index)" :ref="`tab${index}`">
-					<text style="font-size: 26px;width: 120px;height:75px;line-height: 75px;
-					text-align: center;border-bottom-width:3px;border-bottom-style:solid;" 
-					:style="{'color':tabIndex===index? '#fd6801':'#555','border-bottom-color':tabIndex===index?'#fd6801':'#fff'}">{{item.name}}</text>
-				</div>
-			</scroller>	
-		</div> -->
 		<rocky-tab :tabBar="tabBar" :tabIndex="tabIndex" @fChange="sChange"></rocky-tab>
 		
 		<slider  style="flex: 1;" infinite="false" :index="tabIndex" @change="sliderChange">
-			<div v-for="(item,index) in tabBar" :key="index">
+			<!-- <div v-for="(item,index) in tabBar" :key="index">
 			<text>{{item.name}}</text>
-			</div>
+			</div> -->
+			<list :show-scrollbar="false" v-for="(item1,index1) in tabBar" :key="index1">
+				<cell>
+					<!-- 轮播图组件 -->
+					<rocky-slider :swipers="swipers"></rocky-slider>
+					<!-- 图标分类组件 -->
+					<rocky-nav :iconArray="iconArray"></rocky-nav>
+					<!-- 分割线 -->
+					<divider/>
+					<threeAdv :advData="advData"></threeAdv>
+					<divider/>
+					<rocky-one></rocky-one>
+					
+					<!-- 公共列表组件 -->
+					<rocky-comlist :data="commonList"></rocky-comlist>
+					
+					
+					
+				</cell>
+			</list>
+			
 		</slider>
 		
 		
-		<!-- <list :show-scrollbar="false"> -->
-			<!-- <cell> -->
-				<!-- 轮播图组件 -->
-				<!-- <rocky-slider :swipers="swipers"></rocky-slider> -->
-				<!-- 图标分类组件 -->
-				<!-- <rocky-nav :iconArray="iconArray"></rocky-nav> -->
-				<!-- 分割线 -->
-				<!-- <divider/> -->
-				<!-- <threeAdv :advData="advData"></threeAdv> -->
-				<!-- <divider/> -->
-				<!-- <rocky-one></rocky-one> -->
-				
-				<!-- 公共列表组件 -->
-				<!-- <rocky-comlist :data="commonList"></rocky-comlist> -->
-				
-				
-				
-			<!-- </cell> -->
-		<!-- </list> -->
+
 		
 	</div>
 </template>
