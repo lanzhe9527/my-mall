@@ -4,7 +4,10 @@
 		<view class="title-box">
 			<text class="title-text">{{headerTitle}}</text>
 		</view>
-		<image :src="bodyImg" mode="widthFix" style="width: 750rpx;height: 300rpx;"></image>
+		<image :src="bodyImg" mode="widthFix" v-if="bodyImg"
+		style="width: 750rpx;height: 300rpx;">
+		</image>
+		<slot />
 	</view>
 </template>
 
@@ -12,7 +15,12 @@
 	export default{
 		props:{
 			headerTitle:String,
-			bodyImg:String
+			bodyImg:String,
+			// 是否显示
+			showhead:{
+				type:Boolean,
+				default:true
+			}
 		}
 	}
 </script>
