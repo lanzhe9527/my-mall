@@ -198,6 +198,15 @@
 		// 		this.changeTab(a)
 		// 	}
 		// },
+	
+		// 监听点击搜索框
+		onNavigationBarSearchInputClicked() {
+		uni.navigateTo({
+			url:'/pages/search/search'
+		})
+		},
+	
+	
 		methods:{
 			sChange(index){
 				this.tabIndex=index
