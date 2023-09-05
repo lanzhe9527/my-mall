@@ -5,6 +5,11 @@
 		<view class="button-box">
 				<color-tag :item="item" v-for="(item,index) in hot" :key="index"></color-tag>
 		</view>
+		<!-- 常用分类 -->
+		<card header-title="常用分类">
+			<color-tag :item="item" v-for="(item,index) in hot" :key="index" :color="false"></color-tag>
+		</card>
+		
 	</view>
 </template>
 
