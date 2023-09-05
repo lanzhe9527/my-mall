@@ -4,7 +4,7 @@
 		<view class="title-box">
 			<text class="title-text">{{headerTitle}}</text>
 		</view>
-		<image :src="bodyImg" mode="widthFix"></image>
+		<image :src="bodyImg" mode="widthFix" style="width: 750rpx;height: 300rpx;"></image>
 	</view>
 </template>
 
@@ -17,7 +17,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.title-box {
 		border-bottom: 1rpx solid #f1f1f1;
 		padding: 10rpx 20rpx;
