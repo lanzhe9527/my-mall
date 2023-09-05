@@ -10,6 +10,13 @@
 			<color-tag :item="item" v-for="(item,index) in hot" :key="index" :color="false"></color-tag>
 		</card>
 		
+		<card header-title="搜索记录">
+			<uni-list-item title="小米"></uni-list-item>
+			<uni-list-item title="小米"></uni-list-item>
+			<uni-list-item title="小米"></uni-list-item>
+			<uni-list-item title="小米"></uni-list-item>
+		</card>
+		
 	</view>
 </template>
 
