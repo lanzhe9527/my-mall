@@ -16,7 +16,7 @@
 		props:{
 			headerTitle:String,
 			bodyImg:String,
-			// 是否显示
+			// 是否显示头部
 			showhead:{
 				type:Boolean,
 				default:true
