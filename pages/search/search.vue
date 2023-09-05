@@ -7,7 +7,7 @@
 		</view>
 		<!-- 常用分类 -->
 		<card header-title="常用分类">
-			<color-tag :item="item" v-for="(item,index) in hot" :key="index" :color="false"></color-tag>
+			<color-tag :item="item" v-for="(item,index) in cate" :key="index" :color="false"></color-tag>
 		</card>
 		
 		<card header-title="搜索记录">
@@ -36,6 +36,14 @@
 					{name:'Jeep牧马人'},
 					{name:'tank500Hi4-t'},
 					{name:'福特猛禽烈马'},
+				],
+				cate:[
+					{name:'耳机充电座'},
+					{name:'手机'},
+					{name:'电脑/电脑'},
+					{name:'箱包'},
+					{name:'手表带'},
+					{name:'酷玩'},
 				]
 			}
 		},
