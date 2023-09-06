@@ -47,7 +47,14 @@
 				]
 			}
 		},
-	
+		onNavigationBarButtonTap(e) {
+			console.log(e.index)
+			if (e.index===0) {
+				uni.navigateTo({
+					url:'/pages/search-list/search-list'
+				})
+			}
+		},
 		methods: {
 
 		}
