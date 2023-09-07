@@ -11,11 +11,19 @@
 				</view>
 			</view>
 
-			<view class="list-tab-item">
+			<view class="list-tab-item" @click="showDrawer">
 				<text class="main-text-color">筛选</text>
 			</view>
-
 		</view>
+		<!-- 抽屉 -->
+		<uni-drawer mode="right" ref="showRight" :width="310">
+			<view class="bt-box">
+				<view class="bt text-write main-bg-color">确定</view>
+				<view class="bt gray-bg-color">重置</view>
+			</view>
+		</uni-drawer>
+
+
 	</view>
 </template>
 
@@ -54,8 +62,12 @@
 				oldItem.status = 0
 				newItem.status = 1
 
-			}
-		}
+			},
+			// 抽屉
+			showDrawer() {
+				this.$refs.showRight.open();
+			},
+		},
 	}
 </script>
 
@@ -84,5 +96,21 @@
 	.l-height-0 {
 		line-height: 0.7;
 		font-size: 20rpx;
+	}
+	/* 抽屉 */
+	
+	.bt-box{
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		display: flex;
+		border-top: 1px solid lightgray;
+		border-bottom: 1px solid lightgray;
+	}
+	.bt{
+		flex: 1;
+		padding: 20rpx;
+		text-align: center;
 	}
 </style>
