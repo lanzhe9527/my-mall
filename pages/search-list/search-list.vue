@@ -3,27 +3,11 @@
 		<!-- 	<text class="iconfont icon-shengxu"></text> -->
 
 		<view class="list-tab-box">
-			<view class="list-tab-item">
-				<text class="main-text-color">综合</text>
+			<view class="list-tab-item" v-for="(item,index) in screen.list" @tap="changeScreen(index)">
+				<text :class="screen.currentIndex===index? 'main-text-color':'' ">{{item.name}}</text>
 				<view class="icon-box">
-					<i class="iconfont icon-shengxu l-height-0 main-text-color"></i>
-					<i class="iconfont icon-jiangxu l-height-0"></i>
-				</view>
-			</view>
-
-			<view class="list-tab-item">
-				<text>销量</text>
-				<view class="icon-box">
-					<i class="iconfont icon-shengxu l-height-0"></i>
-					<i class="iconfont icon-jiangxu l-height-0"></i>
-				</view>
-			</view>
-
-			<view class="list-tab-item">
-				<text>价格</text>
-				<view class="icon-box">
-					<i class="iconfont icon-shengxu l-height-0"></i>
-					<i class="iconfont icon-jiangxu l-height-0"></i>
+					<i class="iconfont icon-shengxu l-height-0" :class="item.status===1? 'main-text-color':''"></i>
+					<i class="iconfont icon-jiangxu l-height-0" :class="item.status===2? 'main-text-color':''"></i>
 				</view>
 			</view>
 
@@ -39,11 +23,38 @@
 	export default {
 		data() {
 			return {
-
+				screen: {
+					currentIndex: 0,
+					list: [{
+							name: "综合",
+							status: 1
+						},
+						{
+							name: "销量",
+							status: 0
+						},
+						{
+							name: "价格",
+							status: 0
+						}
+					]
+				}
 			}
 		},
 		methods: {
+			changeScreen(index) {
+				// 判断当前点击是否已激活
+				let oldIndex = this.screen.currentIndex
+				let oldItem = this.screen.list[oldIndex]
+				if (oldIndex === index) {
+					return oldItem.status = oldItem.status === 1 ? 2 : 1
+				}
+				let newItem = this.screen.list[index]
+				this.screen.currentIndex = index
+				oldItem.status = 0
+				newItem.status = 1
 
+			}
 		}
 	}
 </script>
