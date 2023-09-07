@@ -18,14 +18,7 @@
 		<!-- 抽屉 -->
 		<uni-drawer mode="right" ref="showRight" :width="310">
 			<card headerTitle="服务" :fontWeight="false" :borderBottom="false">
-				<selec-radio :label="label" @change="tapSlect"></selec-radio>
-			<!-- 	<view class="d-flex">
-					<view class="span24-8 px-2" v-for="(item,index) in label.list" :key="index">
-						<view class="ridus text-center px-2 py-1 font-md bg-gray"
-						:class="label.seleced===index?'radio-active':'radio-border'"
-						@tap="tapSlect(index)">{{item.name}}</view>
-					</view>
-				</view> -->
+				<selec-radio :label="label" :seleced.sync="label.seleced"></selec-radio>
 			</card>
 			<!-- 底部按钮 -->
 			<view class="bt-box">
@@ -98,9 +91,9 @@
 			showDrawer() {
 				this.$refs.showRight.open();
 			},
-			tapSlect(index){
-				this.label.seleced=index
-			}
+			// tapSlect(index){
+			// 	this.label.seleced=index
+			// }
 		},
 	}
 </script>
@@ -150,13 +143,4 @@
 		text-align: center;
 	}
 
-	/* .radio-active {
-		color: #eb7320 !important;
-		background-color: #fce0d5 !important;
-		border-color: #eb7320 !important;
-	}
-
-	.radio-border {
-		border: 1rpx solid #f1f1f1;
-	} */
 </style>

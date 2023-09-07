@@ -15,7 +15,8 @@
 		},
 		methods:{
 			tapSlect(index){
-				this.$emit('change',index)
+				// this.$emit('change',index)
+				this.$emit('update:seleced',index)
 			}
 		}
 	}
