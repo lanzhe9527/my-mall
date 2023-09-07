@@ -18,13 +18,14 @@
 		<!-- 抽屉 -->
 		<uni-drawer mode="right" ref="showRight" :width="310">
 			<card headerTitle="服务" :fontWeight="false" :borderBottom="false">
-				<view class="d-flex">
+				<selec-radio :label="label" @change="tapSlect"></selec-radio>
+			<!-- 	<view class="d-flex">
 					<view class="span24-8 px-2" v-for="(item,index) in label.list" :key="index">
 						<view class="ridus text-center px-2 py-1 font-md bg-gray"
 						:class="label.seleced===index?'radio-active':'radio-border'"
 						@tap="tapSlect(index)">{{item.name}}</view>
 					</view>
-				</view>
+				</view> -->
 			</card>
 			<!-- 底部按钮 -->
 			<view class="bt-box">
@@ -39,9 +40,11 @@
 
 <script>
 	import card from "@/components/common/card.vue"
+	import selecRadio from "@/components/common/slec-radio.vue"
 	export default {
 		components: {
 			card,
+			selecRadio,
 		},
 		data() {
 			return {
@@ -147,7 +150,7 @@
 		text-align: center;
 	}
 
-	.radio-active {
+	/* .radio-active {
 		color: #eb7320 !important;
 		background-color: #fce0d5 !important;
 		border-color: #eb7320 !important;
@@ -155,5 +158,5 @@
 
 	.radio-border {
 		border: 1rpx solid #f1f1f1;
-	}
+	} */
 </style>
