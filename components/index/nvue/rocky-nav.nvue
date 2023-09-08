@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="width: 750px;">
 		<div class="nav-box">
 			<div class="nav-content" v-for="(item,index) in iconArray" :key="index">
 				<image class="nav-img" :src="item.src"></image>
@@ -19,10 +19,10 @@
 
 <style scoped>
 	.nav-box {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		padding: 10px;
+		display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		padding: 10px !important;
 	}
 
 	.nav-content {

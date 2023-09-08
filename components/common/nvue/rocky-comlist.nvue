@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="width: 750px;">
 		<div class="commList-box">
 			<div v-for="(item,index) in data" :key="index">
 				<image :src="item.cover" class="img-box"></image>
