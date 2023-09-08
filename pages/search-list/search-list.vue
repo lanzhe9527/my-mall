@@ -28,17 +28,19 @@
 		</uni-drawer>
 		
 		<!-- 列表 -->
-		<view class="px-2 py-2 d-flex" style="border-bottom: 1rpx solid lightgray;align-items: center;">
+		<search-list :list="list"></search-list>
+	<!-- 	<view class="px-2 py-2 d-flex" style="border-bottom: 1rpx solid lightgray;align-items: center;"
+		v-for="(item,index) in list" :key="index">
 			<view class="" style="width: 320rpx;">
-				<image src="../../static/images/list/2.jpg" mode="widthFix" style="width: 100%;"></image>
+				<image :src="item.titlePic" mode="widthFix" style="width: 100%;"></image>
 			</view>
 			<view class="" style="margin-left: 20rpx;">
-				<view class="" style="font-weight: 500;font-size: 34rpx;">真无线蓝牙耳机</view>
-				<view class="text-gray" style="line-height: 40rpx;margin-bottom: 20rpx;">压制简约 / 分体式耳机 / 蓝牙5.0 / 收纳盒充电</view>
-				<price style="font-weight: 500;">200</price>
-				<view class="">1368条评论 98%满意</view>
+				<view class="" style="font-weight: 500;font-size: 34rpx;">{{item.title}}</view>
+				<view class="text-gray" style="line-height: 40rpx;margin-bottom: 20rpx;">{{item.desc}}</view>
+				<price style="font-weight: 500;">{{item.pprice}}</price>
+				<view class="">{{item.comment_num}}条评论 {{item.good_num}}满意</view>
 			</view>
-		</view>
+		</view> -->
 
 
 	</view>
@@ -48,11 +50,13 @@
 	import card from "@/components/common/card.vue"
 	import selecRadio from "@/components/common/slec-radio.vue"
 	import price from "@/components/common/price.vue"
+	import searchList from "@/components/search-list/search-list.vue"
 	export default {
 		components: {
 			card,
 			selecRadio,
 			price,
+			searchList
 		},
 		data() {
 			return {
@@ -85,7 +89,49 @@
 						}
 					]
 
-				}
+				},
+				list:[
+					{
+						title:'真无线蓝牙耳机1',
+						titlePic:'../../static/images/list/2.jpg',
+						desc:'压制简约 / 分体式耳机 / 蓝牙5.0 / 收纳盒充电',
+						pprice:'288',
+						comment_num:'1368',
+						good_num:'98%'
+					},
+					{
+						title:'真无线蓝牙耳机2',
+						titlePic:'../../static/images/list/3.jpg',
+						desc:'压制简约 / 分体式耳机 / 蓝牙5.0 / 收纳盒充电',
+						pprice:'288',
+						comment_num:'1368',
+						good_num:'98%'
+					},
+					{
+						title:'真无线蓝牙耳机3',
+						titlePic:'../../static/images/list/1.jpg',
+						desc:'压制简约 / 分体式耳机 / 蓝牙5.0 / 收纳盒充电',
+						pprice:'288',
+						comment_num:'1368',
+						good_num:'98%'
+					},
+					{
+						title:'真无线蓝牙耳机4',
+						titlePic:'../../static/images/list/4.jpg',
+						desc:'压制简约 / 分体式耳机 / 蓝牙5.0 / 收纳盒充电',
+						pprice:'288',
+						comment_num:'1368',
+						good_num:'98%'
+					},
+					{
+						title:'真无线蓝牙耳机5',
+						titlePic:'../../static/images/list/5.jpg',
+						desc:'压制简约 / 分体式耳机 / 蓝牙5.0 / 收纳盒充电',
+						pprice:'288',
+						comment_num:'1368',
+						good_num:'98%'
+					},
+				]
 			}
 		},
 		methods: {
