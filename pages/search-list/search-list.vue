@@ -26,6 +26,19 @@
 				<view class="bt gray-bg-color">重置</view>
 			</view>
 		</uni-drawer>
+		
+		<!-- 列表 -->
+		<view class="px-2 py-2 d-flex" style="border-bottom: 1rpx solid lightgray;align-items: center;">
+			<view class="" style="width: 320rpx;">
+				<image src="../../static/images/list/2.jpg" mode="widthFix" style="width: 100%;"></image>
+			</view>
+			<view class="" style="margin-left: 20rpx;">
+				<view class="" style="font-weight: 500;font-size: 34rpx;">真无线蓝牙耳机</view>
+				<view class="text-gray" style="line-height: 40rpx;margin-bottom: 20rpx;">压制简约 / 分体式耳机 / 蓝牙5.0 / 收纳盒充电</view>
+				<price style="font-weight: 500;">200</price>
+				<view class="">1368条评论 98%满意</view>
+			</view>
+		</view>
 
 
 	</view>
@@ -34,10 +47,12 @@
 <script>
 	import card from "@/components/common/card.vue"
 	import selecRadio from "@/components/common/slec-radio.vue"
+	import price from "@/components/common/price.vue"
 	export default {
 		components: {
 			card,
 			selecRadio,
+			price,
 		},
 		data() {
 			return {

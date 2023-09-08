@@ -57,6 +57,9 @@ image {
 .text-write {
 	color: #FFFFFF;
 }
+.text-gray{
+	color: #8f8f94;
+}
 .text-center{text-align: center;}
 /* 字体 */
 .font{ font-size: 25upx; }
