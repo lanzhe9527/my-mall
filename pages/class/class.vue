@@ -29,54 +29,35 @@
 			return {
 				activeIndex: 0,
 				cate: [],
-				list: []
+				list: [],
 			}
 		},
 		onLoad() {
-			for (let i = 1; i < 20; i++) {
-				this.cate.push({
-					name: '分类' + i
-				})
-				this.list.push({
-					list: [{
-							src: "../../static/images/demo/cate_05.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_01.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_03.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_01.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_01.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_01.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_01.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_01.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_01.png",
-							name: "商品一"
-						},{
-							src: "../../static/images/demo/cate_01.png",
-							name: "商品一"
-						},
-					]
-				})
-
-			}
+			this.getData()
 		},
 		methods: {
 			selected(index) {
 				this.activeIndex = index
+			},
+			getData() {
+				for (let i = 1; i < 20; i++) {
+					this.cate.push({
+						name: '分类' + i
+					})
+					this.list.push({
+						list: []
+					})
+				}
+
+				for (let i = 0; i < this.list.length; i++) {
+					for (let j = 0; j < 10; j++) {
+						this.list[i].list.push({
+							src: "../../static/images/demo/cate_07.png",
+							name:`分类${i}-商品${j}`
+						})
+					}
+				}
+				
 			}
 		}
 	}
