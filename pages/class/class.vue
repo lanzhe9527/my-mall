@@ -7,10 +7,10 @@
 			</view>
 		</scroll-view>
 
-		<scroll-view scroll-y="true" style="flex: 3.5;" :scroll-top="rightScrollTop" :scroll-with-animation="true">
+		<scroll-view scroll-y="true" style="flex: 3.5;" :scroll-top="rightScrollTop" :scroll-with-animation="true"
+			@scroll="onRightScroll">
 			<view class="d-flex right-scroll-item" style="flex-wrap: wrap;" v-for="(item,index) in list" :key="index">
-				<view class="span24-8 py-2 text-center" v-for="(item2,index2) in item.list"
-					:key="index2">
+				<view class="span24-8 py-2 text-center" v-for="(item2,index2) in item.list" :key="index2">
 					<image :src="item2.src" mode="" style="width: 120rpx;height: 120rpx;">
 					</image>
 					<view class="">{{item2.name}}</view>
@@ -31,7 +31,7 @@
 				list: [],
 				leftDomsTop: [],
 				rightDomsTop: [],
-				rightScrollTop:0,
+				rightScrollTop: 0,
 			}
 		},
 		onLoad() {
@@ -60,7 +60,18 @@
 		methods: {
 			selected(index) {
 				this.activeIndex = index
-				this.rightScrollTop=this.rightDomsTop[index]
+				this.rightScrollTop = this.rightDomsTop[index]
+			},
+			// 监听右边滚动事件
+			onRightScroll(e) {
+				console.log(e.detail.scrollTop)
+				// 匹配当前scrollTop所处索引
+				this.rightDomsTop.forEach((v, k) => {
+					if (v<e.detail.scrollTop) {
+						this.activeIndex=k
+						return false
+					}
+				})
 			},
 			getData() {
 				for (let i = 1; i < 20; i++) {
