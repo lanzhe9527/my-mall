@@ -7,7 +7,7 @@
 			</view>
 		</scroll-view>
 
-		<scroll-view scroll-y="true" style="flex: 3.5;" :scroll-top="rightScrollTop">
+		<scroll-view scroll-y="true" style="flex: 3.5;" :scroll-top="rightScrollTop" :scroll-with-animation="true">
 			<view class="d-flex right-scroll-item" style="flex-wrap: wrap;" v-for="(item,index) in list" :key="index">
 				<view class="span24-8 py-2 text-center" v-for="(item2,index2) in item.list"
 					:key="index2">
