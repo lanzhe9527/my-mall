@@ -1,6 +1,7 @@
 <template>
 	<view style="height: 100%; border-top: 1rpx solid lightgray;box-sizing: border-box;" class="d-flex">
-		<scroll-view scroll-y="true" style="flex: 1;border-right: 1rpx solid lightgray;">
+		<scroll-view id="leftScroll" :scroll-top="leftScrollTop" scroll-y="true"
+			style="flex: 1;border-right: 1rpx solid lightgray;">
 			<view class="py-1 left-scroll-item" style="border-bottom: 1rpx solid lightgray;" hover-class="gray-bg-color"
 				v-for="(item,index) in cate" :key="index" @tap="selected(index)">
 				<view class="py-1 text-center" :class="activeIndex===index?'slect-active':''">{{item.name}}</view>
@@ -32,28 +33,60 @@
 				leftDomsTop: [],
 				rightDomsTop: [],
 				rightScrollTop: 0,
+				leftScrollTop: 0,
+				cateItemHeight: 0,
+			}
+		},
+		watch: {
+			activeIndex(newVal, oldVal) {
+				const query = uni.createSelectorQuery().in(this);
+				query.select('#leftScroll').fields({
+					size: true,
+					scrollOffset: true
+				}, data => {
+					let H = data.height
+					let sT = data.scrollTop
+					// 下面
+					if ((this.leftDomsTop[newVal] + this.cateItemHeight) > (H + sT)) {
+							console.log(this.leftScrollTop)	
+						return this.leftScrollTop = this.leftDomsTop[newVal] + this.cateItemHeight - H
+					}
+					// 上面
+					if (sT > this.cateItemHeight) {
+							console.log(this.leftScrollTop)	
+							this.leftScrollTop=this.leftDomsTop[newVal]
+					}
+					if (sT <= this.cateItemHeight) {
+						this.leftScrollTop=0
+					}
+				}).exec();
 			}
 		},
 		onLoad() {
 			this.getData()
+			
 		},
 		onReady() {
 			const query = uni.createSelectorQuery().in(this);
 			const query1 = uni.createSelectorQuery().in(this);
-			query.selectAll('.left-scroll-item').boundingClientRect(data => {
-				console.log(data)
+			query.selectAll('.left-scroll-item').fields({
+				rect: true,
+				size: true
+			}, data => {
+				// console.log(data)
 				this.leftDomsTop = data.map(v => {
+					this.cateItemHeight = v.height
 					return v.top
 				})
-				console.log(this.leftDomsTop)
+
 			}).exec();
 
 			query1.selectAll('.right-scroll-item').boundingClientRect(data => {
-				console.log(data)
+				// console.log(data)
 				this.rightDomsTop = data.map(v => {
 					return v.top
 				})
-				console.log(this.rightDomsTop)
+
 			}).exec();
 
 		},
@@ -64,11 +97,11 @@
 			},
 			// 监听右边滚动事件
 			onRightScroll(e) {
-				console.log(e.detail.scrollTop)
+				// console.log(e.detail.scrollTop)
 				// 匹配当前scrollTop所处索引
 				this.rightDomsTop.forEach((v, k) => {
-					if (v<e.detail.scrollTop) {
-						this.activeIndex=k
+					if (v < e.detail.scrollTop) {
+						this.activeIndex = k
 						return false
 					}
 				})
