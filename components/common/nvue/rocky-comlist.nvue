@@ -1,7 +1,7 @@
 <template>
 	<div style="width: 750px;">
 		<div class="commList-box">
-			<div v-for="(item,index) in data" :key="index">
+			<div v-for="(item,index) in data" :key="index" @click="openDetail">
 				<image :src="item.cover" class="img-box"></image>
 				<div class="text-box">
 					<text class="font-lg">{{item.title}}</text>
@@ -23,6 +23,13 @@
 	export default {
 		props: {
 			data: Array
+		},
+		methods:{
+			openDetail(){
+				uni.navigateTo({
+					url:"/pages/detail/detail"
+				})
+			}
 		}
 
 	}

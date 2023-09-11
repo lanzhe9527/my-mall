@@ -131,6 +131,25 @@
            }
             
         }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" :                                                                                    
+            {
+              "app-plus": {
+				  "bounce": "none",
+				 "scrollIndicator": "none",
+              	"titleNView": {
+              		"type": "transparent",
+					"buttons": [
+						{
+							"type": "menu"
+						}
+					]
+              	}
+              }
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
