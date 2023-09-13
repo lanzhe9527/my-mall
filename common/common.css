@@ -44,6 +44,11 @@ image {
 	border-color: #f1f1f1;
 }
 
+/* scroll-view */
+.scroll-row{width:750rpx;white-space: nowrap;}
+.scroll-row-item{display: inline-block;}
+
+
 .bg-gray{
 	background-color: rgb(245, 243, 246);
 }
@@ -93,6 +98,12 @@ image {
 
 /* flex布局 */
 .d-flex{ display: flex;flex-direction: row!important; }
+.flex-column{flex-direction: column!important;}
+.j-center{justify-content: center!important;}
+.a-center{align-items: center!important;}
+
+
+
 /* 栅栏三 */
 .span24-1{ width: 4.17%; } 
 .span24-2{ width: 8.33%; } 
