@@ -3,14 +3,10 @@
 		<!-- 商品详情大图 -->
 		<swiper-image :resdata="banner" height="750"></swiper-image>
 		<!-- 基础详情 -->
-	<!-- 	<view class="px-2">
-			<view class="font-lg">{{detail.title}}</view>
-			<view class="font-md text-gray line-h-sm mb-3">{{detail.desc}}</view>
-			<price price-size="font-lg" unit-size="font">{{detail.pPrice}}</price>
-		</view> -->
 		<base-info :detail="detail"></base-info>
 		<!-- 滚动商品特性 170x110-->
-		<scroll-view scroll-x="true" class="scroll-row">
+		<scroll-attrs :baseAttrs="baseAttrs"></scroll-attrs>
+		<!-- <scroll-view scroll-x="true" class="scroll-row">
 			<view class="scroll-row-item" style="width: 170rpx;height:110rpx;" 
 				v-for="(item,index) in baseAttrs" :key="index">
 				<view class="d-flex flex-column a-center j-center" style="height:110rpx;">
@@ -19,8 +15,7 @@
 					<view class="font-sm text-gray">{{item.desc}}</view>
 				</view>
 			</view>
-
-		</scroll-view>
+		</scroll-view> -->
 
 
 
@@ -32,10 +27,12 @@
 <script>
 	import swiperImage from "@/components/index/swiper-images.vue"
 	import baseInfo from "@/components/detail/base-info.vue"
+	import scrollAttrs from "@/components/detail/scroll-attrs.vue"
 	export default {
 		components: {
 			swiperImage,
 			baseInfo,
+			scrollAttrs,
 		},
 		data() {
 			return {
