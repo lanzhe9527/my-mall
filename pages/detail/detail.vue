@@ -47,14 +47,14 @@
 				}],
 				
 				baseAttrs:[
-					{icon:"icon-saoyisao",title:"cpu",desc:"蛟龙888处理器"},
-					{icon:"icon-saoyisao",title:"cpu",desc:"蛟龙888处理器"},
-					{icon:"icon-saoyisao",title:"cpu",desc:"蛟龙888处理器"},
-					{icon:"icon-saoyisao",title:"cpu",desc:"蛟龙888处理器"},
-					{icon:"icon-saoyisao",title:"cpu",desc:"蛟龙888处理器"},
-					{icon:"icon-saoyisao",title:"cpu",desc:"蛟龙888处理器"},
-					{icon:"icon-saoyisao",title:"cpu",desc:"蛟龙888处理器"},
-					{icon:"icon-saoyisao",title:"cpu",desc:"蛟龙888处理器"},
+					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
+					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
+					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
+					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
+					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
+					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
+					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
+					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
 					
 				],
 				
