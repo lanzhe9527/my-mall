@@ -28,15 +28,15 @@
 					<uni-list-item showArrow :customStyle="{ backgroundColor: '#F1F1F1',padding:''}">
 						<view class="font-md d-flex">
 							<view class="mr-3">
-								<i class="iconfont icon-saoyisao main-text-color mr-1"></i>
+								<i class="iconfont icon-check main-text-color mr-1"></i>
 								<text>小米自营</text>
 							</view>
 							<view class="mr-3">
-								<i class="iconfont icon-saoyisao main-text-color mr-1"></i>
+								<i class="iconfont icon-check main-text-color mr-1"></i>
 								<text>小米自营</text>
 							</view>
 							<view class="mr-3">
-								<i class="iconfont icon-saoyisao main-text-color mr-1"></i>
+								<i class="iconfont icon-check main-text-color mr-1"></i>
 								<text>小米自营</text>
 							</view>
 							
