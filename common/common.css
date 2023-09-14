@@ -88,6 +88,12 @@ image {
 .mb-4 { margin-bottom: 40upx;}
 .mb-5 { margin-bottom: 50upx;}
 
+.mr-1{margin-right: 10rpx;}
+.mr-2{margin-right: 20rpx;}
+.mr-3{margin-right: 30rpx;}
+
+
+
 
 
 /* 左右内边距 */

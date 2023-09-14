@@ -6,17 +6,51 @@
 		<base-info :detail="detail"></base-info>
 		<!-- 滚动商品特性 170x110-->
 		<scroll-attrs :baseAttrs="baseAttrs"></scroll-attrs>
-		<!-- <scroll-view scroll-x="true" class="scroll-row">
-			<view class="scroll-row-item" style="width: 170rpx;height:110rpx;" 
-				v-for="(item,index) in baseAttrs" :key="index">
-				<view class="d-flex flex-column a-center j-center" style="height:110rpx;">
-					<view class="line-h-sm iconfont" :class="item.icon"></view>
-					<view class="line-h">{{item.title}}</view>
-					<view class="font-sm text-gray">{{item.desc}}</view>
-				</view>
+		
+		<view class="px-2 py-2">
+			<view class="gray-bg-color">
+				<ui-list>
+					<uni-list-item showArrow :customStyle="{ backgroundColor: '#F1F1F1',padding:''}">
+						<view class="font-md">
+							<text class="mr-2">已选</text>
+							<text>火焰红 64GB 标配</text>
+						</view>
+					</uni-list-item>
+					
+					<uni-list-item showArrow :customStyle="{ backgroundColor: '#F1F1F1',padding:''}">
+						<view class="font-md">
+							<text class="mr-2">配送</text>
+							<text class="mr-2">北京 东城区</text>
+							<text class="main-text-color">有现货</text>
+						</view>
+					</uni-list-item>
+					
+					<uni-list-item showArrow :customStyle="{ backgroundColor: '#F1F1F1',padding:''}">
+						<view class="font-md d-flex">
+							<view class="mr-3">
+								<i class="iconfont icon-saoyisao main-text-color mr-1"></i>
+								<text>小米自营</text>
+							</view>
+							<view class="mr-3">
+								<i class="iconfont icon-saoyisao main-text-color mr-1"></i>
+								<text>小米自营</text>
+							</view>
+							<view class="mr-3">
+								<i class="iconfont icon-saoyisao main-text-color mr-1"></i>
+								<text>小米自营</text>
+							</view>
+							
+						</view>
+					</uni-list-item>
+					
+					
+					
+					
+					
+				</ui-list>
 			</view>
-		</scroll-view> -->
-
+	
+		</view>
 
 
 
