@@ -46,71 +46,10 @@
 			</view>
 		</view>
 			<!-- 横向滚动评论 -->
-			<!-- 外620x380
-				头像70
-				图片高115 -->
-			<view class="px-2 py-2">
-				<scroll-view scroll-x="true" scroll-y="false" class="scroll-row">
-					<view class="scroll-row-item bg-gray ridus mr-2 px-2 py-2" style="width: 620rpx;height: 380rpx;">
-						<view class="d-flex a-center">
-							<view class="d-flex a-center">
-								<image src="../../static/images/demo/demo6.jpg" class="mr-2" style="width: 70rpx;height: 70rpx; border-radius: 50%;"></image>
-								<view class="d-flex flex-column text-gray line-h-md">
-									<text>大师兄</text>
-									<text>2023-09-12</text>
-								</view>
-							</view>
-							<view style="margin-left: auto;">
-								<view class="iconfont icon-dianzan text-gray">164</view>
-							</view>
-						</view>
-						<view class="mt-2">评论支持好评评论支持好评评论</view>
-						<view class="d-flex mt-4">
-							<view class="span24-8 px-3">
-								<image src="../../static/images/demo/demo6.jpg" style="height: 115rpx;"></image>
-							</view>
-							<view class="span24-8 px-2">
-								<image src="../../static/images/demo/demo6.jpg" style="height: 115rpx;"></image>
-							</view>
-							<view class="span24-8 px-2">
-								<image src="../../static/images/demo/demo6.jpg" style="height: 115rpx;"></image>
-							</view>
-						</view>
-					</view>
-					
-					<view class="scroll-row-item bg-gray ridus mr-2 px-2 py-2" style="width: 620rpx;height: 380rpx;">
-						<view class="d-flex a-center">
-							<view class="d-flex a-center">
-								<image src="../../static/images/demo/demo6.jpg" class="mr-2" style="width: 70rpx;height: 70rpx; border-radius: 50%;"></image>
-								<view class="d-flex flex-column text-gray line-h-md">
-									<text>大师兄</text>
-									<text>2023-09-12</text>
-								</view>
-							</view>
-							<view style="margin-left: auto;">
-								<view class="iconfont icon-dianzan text-gray">164</view>
-							</view>
-						</view>
-						<view class="mt-2">评论支持好评评论支持好评评论</view>
-						<view class="d-flex mt-4">
-							<view class="span24-8 px-3">
-								<image src="../../static/images/demo/demo6.jpg" style="height: 115rpx;"></image>
-							</view>
-							<view class="span24-8 px-2">
-								<image src="../../static/images/demo/demo6.jpg" style="height: 115rpx;"></image>
-							</view>
-							<view class="span24-8 px-2">
-								<image src="../../static/images/demo/demo6.jpg" style="height: 115rpx;"></image>
-							</view>
-						</view>
-					</view>
-					
-				
-				</scroll-view>
-			</view>
-
-
-
+			
+			<scroll-comments :comments="comments"></scroll-comments>
+			
+		
 	</view>
 </template>
 
@@ -118,14 +57,42 @@
 	import swiperImage from "@/components/index/swiper-images.vue"
 	import baseInfo from "@/components/detail/base-info.vue"
 	import scrollAttrs from "@/components/detail/scroll-attrs.vue"
+	import scrollComments from "@/components/detail/scroll-comments.vue"
 	export default {
 		components: {
 			swiperImage,
 			baseInfo,
 			scrollAttrs,
+			scrollComments,
 		},
 		data() {
 			return {
+				// 评论
+				comments:[{
+					userpic:"../../static/images/demo/demo6.jpg",	
+					username:"大师兄",	
+					create_time:"2023-09-12",	
+					goods_num:"189",	
+					context:"评论支持好评评论支持好评评论",	
+					imgList:[
+						"../../static/images/demo/demo6.jpg",
+						"../../static/images/demo/demo6.jpg",
+						"../../static/images/demo/demo6.jpg",
+					]
+				},{
+					userpic:"../../static/images/demo/demo6.jpg",	
+					username:"大师兄",	
+					create_time:"2023-09-12",	
+					goods_num:"189",	
+					context:"评论支持好评评论支持好评评论",	
+					imgList:[
+						"../../static/images/demo/demo6.jpg",
+						"../../static/images/demo/demo6.jpg",
+						"../../static/images/demo/demo6.jpg",
+					]
+				}],
+				
+				
 				banner: [{
 					src: "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1679982565.14646441.png"
 				}, {
