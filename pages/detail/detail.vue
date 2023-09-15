@@ -61,7 +61,7 @@
 								</view>
 							</view>
 							<view style="margin-left: auto;">
-								<view class="iconfont icon-shanchu text-gray">164</view>
+								<view class="iconfont icon-dianzan text-gray">164</view>
 							</view>
 						</view>
 						<view class="mt-2">评论支持好评评论支持好评评论</view>
@@ -88,7 +88,7 @@
 								</view>
 							</view>
 							<view style="margin-left: auto;">
-								<view class="iconfont icon-shanchu text-gray">164</view>
+								<view class="iconfont icon-dianzan text-gray">164</view>
 							</view>
 						</view>
 						<view class="mt-2">评论支持好评评论支持好评评论</view>
