@@ -49,6 +49,10 @@
 			
 			<scroll-comments :comments="comments"></scroll-comments>
 			
+			<!-- 热门推荐 -->
+		<card headerTitle="热门推荐" :fontWeight="false">
+			<commList :commonList="hotList"></commList>
+		</card>
 		
 	</view>
 </template>
@@ -58,12 +62,18 @@
 	import baseInfo from "@/components/detail/base-info.vue"
 	import scrollAttrs from "@/components/detail/scroll-attrs.vue"
 	import scrollComments from "@/components/detail/scroll-comments.vue"
+	import card from "@/components/common/card.vue"
+	import commList from "@/components/common/commList.vue"
+	
+	
 	export default {
 		components: {
 			swiperImage,
 			baseInfo,
 			scrollAttrs,
 			scrollComments,
+			card,
+			commList,
 		},
 		data() {
 			return {
@@ -116,6 +126,50 @@
 					{icon:"icon-cpuchuliqiyingjian",title:"cpu",desc:"蛟龙888处理器"},
 					
 				],
+				hotList:[
+									{
+										cover:"../../static/images/list/1.jpg",
+										title:"米家空调",
+										desc:"1.5匹变流空调",
+										oPrice:"2678",
+										nPrice:"1999"
+									},
+									{
+										cover:"../../static/images/list/2.jpg",
+										title:"黑鲨手机",
+										desc:"游戏性能，散热好",
+										oPrice:"2678",
+										nPrice:"1299"
+									},
+									{
+										cover:"../../static/images/list/3.jpg",
+										title:"红米手机",
+										desc:"1.5匹变流空调",
+										oPrice:"2678",
+										nPrice:"1999"
+									},
+									{
+										cover:"../../static/images/list/4.jpg",
+										title:"荣耀",
+										desc:"1.5匹变流空调",
+										oPrice:"2678",
+										nPrice:"1999"
+									},
+									{
+										cover:"../../static/images/list/5.jpg",
+										title:"红米redmi",
+										desc:"1.5匹变流空调",
+										oPrice:"2678",
+										nPrice:"1999"
+									},
+									{
+										cover:"../../static/images/list/6.jpg",
+										title:"米家平板",
+										desc:"本地数据",
+										oPrice:"2678",
+										nPrice:"1999"
+									}
+								]
 				
 			}
 		},
