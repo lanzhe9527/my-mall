@@ -229,19 +229,19 @@
 }
 
 @keyframes showBody{
-	0{transform: translateY(0);}
+	0%{transform: translateY(0);}
 	100%{transform: translateY(-100%)}
 }
 @keyframes hideBody{
-	0{transform: translateY(-100%);}
+	0%{transform: translateY(-100%);}
 	100%{transform: translateY(0)}
 }
 @keyframes showMask{
-	0{opacity: 0;}
+	0%{opacity: 0;}
 	100%{opacity: 1;}
 }
 @keyframes hideMask{
-	0{opacity: 1;}
+	0%{opacity: 1;}
 	100%{opacity: 0;}
 }
 
