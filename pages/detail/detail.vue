@@ -71,7 +71,7 @@
 	import card from "@/components/common/card.vue"
 	import commList from "@/components/common/commList.vue"
 	import bottomBtn from "@/components/detail/bottom-btn.vue"
-	import commonPooup from "@/components/common/common-popup.vue"
+	import commonPopup from "@/components/common/common-popup.vue"
 	
 	export default {
 		components: {
@@ -82,7 +82,7 @@
 			card,
 			commList,
 			bottomBtn,
-			commonPooup,
+			commonPopup,
 		},
 		data() {
 			return {
@@ -188,6 +188,7 @@
 			show(){
 				console.log(1)
 				this.popupClass='show'
+				console.log(this.popupClass)
 			},
 			hide(){
 				this.popupClass='hide'
